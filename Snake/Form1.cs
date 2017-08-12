@@ -17,6 +17,11 @@ namespace Snake
             InitializeComponent();
         }
 
+        private void Snake_Load(object sender, EventArgs e)
+        {
+
+        }
+
         private void Snake_Paint(object sender, PaintEventArgs e)
         {
 

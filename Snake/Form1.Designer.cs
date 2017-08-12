@@ -43,6 +43,7 @@
             this.Name = "Snake";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "no step on snek";
+            this.Load += new System.EventHandler(this.Snake_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Snake_Paint);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Snake_KeyDown);
             this.ResumeLayout(false);
