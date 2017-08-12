@@ -1,6 +1,6 @@
 ﻿namespace Snake
 {
-    partial class Snake
+    partial class SnakeGame
     {
         /// <summary>
         /// Variável de designer necessária.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Snake));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SnakeGame));
             this.SuspendLayout();
             // 
             // Snake

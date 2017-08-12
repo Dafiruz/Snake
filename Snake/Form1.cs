@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Snake
 {
-    public partial class Snake : Form
+    public partial class SnakeGame : Form
     {
-        public Snake()
+        public SnakeGame()
         {
             InitializeComponent();
         }
@@ -30,6 +30,7 @@ namespace Snake
         private void Snake_KeyDown(object sender, KeyEventArgs e)
         {
             MessageBox.Show("Test");
+            this.Text = "Points: " + ;
         }
     }
 }

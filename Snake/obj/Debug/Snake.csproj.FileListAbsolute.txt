@@ -6,4 +6,4 @@ D:\Dropbox\Random Stuff\Code\VisualStudio\Snake\Snake\obj\Debug\Snake.Properties
 D:\Dropbox\Random Stuff\Code\VisualStudio\Snake\Snake\obj\Debug\Snake.csproj.GenerateResource.Cache
 D:\Dropbox\Random Stuff\Code\VisualStudio\Snake\Snake\obj\Debug\Snake.exe
 D:\Dropbox\Random Stuff\Code\VisualStudio\Snake\Snake\obj\Debug\Snake.pdb
-D:\Dropbox\Random Stuff\Code\VisualStudio\Snake\Snake\obj\Debug\Snake.Snake.resources
+D:\Dropbox\Random Stuff\Code\VisualStudio\Snake\Snake\obj\Debug\Snake.SnakeGame.resources
