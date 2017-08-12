@@ -10,16 +10,18 @@ namespace Snake
     public class Snake
     {
         public Rectangle[] snake;
-        private SolidBrush brush;
+        private SolidBrush brushHead;
+        private SolidBrush brushBody;
         private int x, y, width, height;
 
         public Snake()
         {
-            snake = new Rectangle[3];
-            brush = new SolidBrush(Color.Gray);
+            snake = new Rectangle[4];
+            brushBody = new SolidBrush(Color.Gray);
+            brushHead = new SolidBrush(Color.White);
 
-            x = 20;
-            y = 0;
+            x = 100;
+            y = 100;
             width = 10;
             height = 10;
 
@@ -32,9 +34,18 @@ namespace Snake
 
         public void draw(Graphics paper)
         {
+            int first = 0;
             foreach(Rectangle rec in snake)
             {
-                paper.FillRectangle(brush, rec);
+                if(first == 0)
+                {
+                    paper.FillRectangle(brushHead, rec);
+                    first = 1;
+                }
+                else
+                {
+                    paper.FillRectangle(brushBody, rec);
+                }
             }
         }
     }
