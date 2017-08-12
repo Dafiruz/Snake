@@ -10,7 +10,7 @@ namespace Snake
     {
         private int points;
 
-        Game()
+        public Game()
         {
             points = 0;
         }

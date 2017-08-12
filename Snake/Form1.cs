@@ -12,6 +12,11 @@ namespace Snake
 {
     public partial class SnakeGame : Form
     {
+
+        Game game = new Game();
+        Graphics paper;
+        Snake snake = new Snake();
+
         public SnakeGame()
         {
             InitializeComponent();
@@ -24,13 +29,14 @@ namespace Snake
 
         private void Snake_Paint(object sender, PaintEventArgs e)
         {
-
+            paper = e.Graphics;
+            snake.draw(paper);
         }
 
         private void Snake_KeyDown(object sender, KeyEventArgs e)
         {
-            MessageBox.Show("Test");
-            this.Text = "Points: " + ;
+            this.Text = "Points: " + game.getPoints();
+            game.incrementPoints(10);
         }
     }
 }
