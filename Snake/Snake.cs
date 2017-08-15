@@ -61,5 +61,29 @@ namespace Snake
                 snake[i].X += 12;
             }
         }
+
+        public void moveLeft()
+        {
+            for (int i = 0; i < snake.Length; i++)
+            {
+                snake[i].X -= 12;
+            }
+        }
+
+        public void moveUp()
+        {
+            for (int i = 0; i < snake.Length; i++)
+            {
+                snake[i].Y -= 12;
+            }
+        }
+
+        public void moveDown()
+        {
+            for (int i = 0; i < snake.Length; i++)
+            {
+                snake[i].Y += 12;
+            }
+        }
     }
 }

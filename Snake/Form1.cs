@@ -27,6 +27,9 @@ namespace Snake
         private void Snake_Load(object sender, EventArgs e)
         {
             max_right = this.Width - 32;
+            max_left = 0;
+            max_up = this.Height - 32;
+
         }
 
         private void Snake_Paint(object sender, PaintEventArgs e)
@@ -38,10 +41,31 @@ namespace Snake
         private void Snake_KeyDown(object sender, KeyEventArgs e)
         {
             this.Text = "Points: " + snake.GetX();
-            if (snake.GetX() < max_right)
+            switch (e.KeyCode)
             {
-                snake.moveRight();
+                case Keys.W:
+                case Keys.Up:
+                    snake.moveUp();
+                    break;
+                case Keys.A:
+                case Keys.Left:
+                    snake.moveLeft();
+                    break;
+                case Keys.S:
+                case Keys.Down:
+                    snake.moveDown();
+                    break;
+                case Keys.D:
+                case Keys.Right:
+                    snake.moveRight();
+                    break;
+                default:
+                    break;
             }
+
+            //limit to the right
+            //if (snake.GetX() < max_right)
+
             this.Invalidate();
         }
     }
