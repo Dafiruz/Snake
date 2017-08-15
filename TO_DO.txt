@@ -1,0 +1,2 @@
+> Add food
+> Restrict the movements (can't go down when facing up, can't go left when facing right, ...)
