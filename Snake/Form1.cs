@@ -17,6 +17,8 @@ namespace Snake
         Graphics paper;
         Snake snake = new Snake();
 
+        int max_right, max_left, max_up, max_down;
+
         public SnakeGame()
         {
             InitializeComponent();
@@ -24,7 +26,7 @@ namespace Snake
 
         private void Snake_Load(object sender, EventArgs e)
         {
-
+            max_right = this.Width - 32;
         }
 
         private void Snake_Paint(object sender, PaintEventArgs e)
@@ -36,7 +38,10 @@ namespace Snake
         private void Snake_KeyDown(object sender, KeyEventArgs e)
         {
             this.Text = "Points: " + snake.GetX();
-            snake.moveRight();
+            if (snake.GetX() < max_right)
+            {
+                snake.moveRight();
+            }
             this.Invalidate();
         }
     }
