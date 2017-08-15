@@ -80,9 +80,24 @@ namespace Snake
 
         public void moveDown()
         {
-            for (int i = 0; i < snake.Length; i++)
+            //save the position of the previous square
+            int old_x = snake[0].X;
+            int old_y = snake[0].Y;
+            int old_x2 = snake[1].X;
+            int old_y2 = snake[1].Y;
+
+            //move the head of the snake down
+            snake[0].Y += 12;
+
+            //move the rest of the body to the following position
+            for (int i = 1; i < snake.Length; i++)
             {
-                snake[i].Y += 12;
+                old_x2 = snake[i].X;
+                old_y2 = snake[i].Y;
+                snake[i].X = old_x;
+                snake[i].Y = old_y;
+                old_x = old_x2;
+                old_y = old_y2;
             }
         }
     }
