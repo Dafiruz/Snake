@@ -54,31 +54,7 @@ namespace Snake
             return snake[0].X;
         }
 
-        public void moveRight()
-        {
-            for (int i = 0; i < snake.Length; i++)
-            {
-                snake[i].X += 12;
-            }
-        }
-
-        public void moveLeft()
-        {
-            for (int i = 0; i < snake.Length; i++)
-            {
-                snake[i].X -= 12;
-            }
-        }
-
-        public void moveUp()
-        {
-            for (int i = 0; i < snake.Length; i++)
-            {
-                snake[i].Y -= 12;
-            }
-        }
-
-        public void moveDown()
+        public void move(string direction)
         {
             //save the position of the previous square
             int old_x = snake[0].X;
@@ -86,8 +62,24 @@ namespace Snake
             int old_x2 = snake[1].X;
             int old_y2 = snake[1].Y;
 
-            //move the head of the snake down
-            snake[0].Y += 12;
+            //move the head of the snake
+            switch (direction)
+            {
+                case "right":
+                    snake[0].X += 12;
+                    break;
+                case "left":
+                    snake[0].X -= 12;
+                    break;
+                case "up":
+                    snake[0].Y -= 12;
+                    break;
+                case "down":
+                    snake[0].Y += 12;
+                    break;
+                default:
+                    break;
+            }
 
             //move the rest of the body to the following position
             for (int i = 1; i < snake.Length; i++)

@@ -45,19 +45,19 @@ namespace Snake
             {
                 case Keys.W:
                 case Keys.Up:
-                    snake.moveUp();
+                    snake.move("up");
                     break;
                 case Keys.A:
                 case Keys.Left:
-                    snake.moveLeft();
+                    snake.move("left");
                     break;
                 case Keys.S:
                 case Keys.Down:
-                    snake.moveDown();
+                    snake.move("down");
                     break;
                 case Keys.D:
                 case Keys.Right:
-                    snake.moveRight();
+                    snake.move("right");
                     break;
                 default:
                     break;
