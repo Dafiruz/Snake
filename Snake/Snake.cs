@@ -16,7 +16,7 @@ namespace Snake
 
         public Snake()
         {
-            snake = new Rectangle[4];
+            snake = new Rectangle[3];
             brushBody = new SolidBrush(Color.Gray);
             brushHead = new SolidBrush(Color.White);
 
@@ -28,7 +28,7 @@ namespace Snake
             for (int i = 0; i < snake.Length; i++)
             {
                 snake[i] = new Rectangle(x, y, width, height);
-                x -= 10;
+                x -= 12;
             }
         }
 
@@ -46,6 +46,19 @@ namespace Snake
                 {
                     paper.FillRectangle(brushBody, rec);
                 }
+            }
+        }
+
+        public int GetX()
+        {
+            return snake[0].X;
+        }
+
+        public void moveRight()
+        {
+            for (int i = 0; i < snake.Length; i++)
+            {
+                snake[i].X += 12;
             }
         }
     }

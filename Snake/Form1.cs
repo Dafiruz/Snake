@@ -35,8 +35,9 @@ namespace Snake
 
         private void Snake_KeyDown(object sender, KeyEventArgs e)
         {
-            this.Text = "Points: " + game.getPoints();
-            game.incrementPoints(10);
+            this.Text = "Points: " + snake.GetX();
+            snake.moveRight();
+            this.Invalidate();
         }
     }
 }
