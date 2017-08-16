@@ -29,7 +29,7 @@ namespace Snake
         private void Snake_Load(object sender, EventArgs e)
         {
             max_right = this.Width - 36;
-            max_down = this.Height - 64;
+            max_down = this.Height - 50;
             max_left = max_up = 12;
         }
 
@@ -81,8 +81,11 @@ namespace Snake
             }
             if (snake.eat(food.GetX(), food.GetY()))
             {
-                MessageBox.Show("memes");
+                game.incrementPoints(1);
+                food = new Food();
             }
+
+            this.Text = "Snake | Points: " + game.getPoints();
             
             this.Invalidate();
         }
