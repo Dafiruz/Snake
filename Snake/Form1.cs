@@ -16,6 +16,7 @@ namespace Snake
         Game game = new Game();
         Graphics paper;
         Snake snake = new Snake();
+        Food food = new Food();
 
         string last_direction = "right";
         int max_right, max_left, max_up, max_down;
@@ -35,6 +36,7 @@ namespace Snake
         private void Snake_Paint(object sender, PaintEventArgs e)
         {
             paper = e.Graphics;
+            food.draw(paper);
             snake.draw(paper);
         }
 
