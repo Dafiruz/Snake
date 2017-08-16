@@ -106,5 +106,11 @@ namespace Snake
             }
             return false;
         }
+
+        public void grow()
+        {
+            int size = snake.Length + 1;
+            Array.Resize<Rectangle>(ref snake, size);
+        }
     }
 }

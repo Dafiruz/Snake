@@ -81,8 +81,9 @@ namespace Snake
             }
             if (snake.eat(food.GetX(), food.GetY()))
             {
-                game.incrementPoints(1);
+                game.incrementPoints(10);
                 food = new Food();
+                snake.grow();
             }
 
             this.Text = "Snake | Points: " + game.getPoints();
