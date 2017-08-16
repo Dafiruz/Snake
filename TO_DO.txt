@@ -1,2 +1,4 @@
 > Add food
-> Restrict the movements (can't go down when facing up, can't go left when facing right, ...)
+> add boundaries so the snake doesn't leave the players sight
+> points
+> make the snake grow
