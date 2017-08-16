@@ -49,6 +49,11 @@ namespace Snake
             }
         }
 
+        public int GetY()
+        {
+            return snake[0].Y;
+        }
+
         public int GetX()
         {
             return snake[0].X;
@@ -56,7 +61,7 @@ namespace Snake
 
         public void move(string direction)
         {
-            //save the position of the previous square
+            //save the position of first two squares
             int old_x = snake[0].X;
             int old_y = snake[0].Y;
             int old_x2 = snake[1].X;

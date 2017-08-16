@@ -27,9 +27,9 @@ namespace Snake
 
         private void Snake_Load(object sender, EventArgs e)
         {
-            max_right = this.Width - 32;
-            max_left = 0;
-            max_up = 0;
+            max_right = this.Width - 36;
+            max_down = this.Height - 64;
+            max_left = max_up = 12;
         }
 
         private void Snake_Paint(object sender, PaintEventArgs e)
@@ -45,7 +45,7 @@ namespace Snake
             {
                 case Keys.W:
                 case Keys.Up:
-                    if (last_direction != "down")
+                    if (last_direction != "down" && snake.GetY() >= max_up)
                     {
                         snake.move("up");
                         last_direction = "up";
@@ -53,7 +53,7 @@ namespace Snake
                     break;
                 case Keys.A:
                 case Keys.Left:
-                    if (last_direction != "right")
+                    if (last_direction != "right" && snake.GetX() >= max_left)
                     {
                         snake.move("left");
                         last_direction = "left";
@@ -61,7 +61,7 @@ namespace Snake
                     break;
                 case Keys.S:
                 case Keys.Down:
-                    if (last_direction != "up")
+                    if (last_direction != "up" && snake.GetY() <= max_down)
                     {
                         snake.move("down");
                         last_direction = "down";
@@ -69,7 +69,7 @@ namespace Snake
                     break;
                 case Keys.D:
                 case Keys.Right:
-                    if (last_direction != "left")
+                    if (last_direction != "left" && snake.GetX() <= max_right)
                     {
                         snake.move("right");
                         last_direction = "right";
