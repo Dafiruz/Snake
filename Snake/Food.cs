@@ -11,15 +11,22 @@ namespace Snake
     {
         private const int maxXY = 590;
         private int x, y, height, width;
-        private Color color;
         public Rectangle[] food;
         private SolidBrush brush;
         Random random = new Random();
 
         public Food()
         {
-            x = random.Next(maxXY);
-            y = random.Next(maxXY);
+            //make sure the food will be in a coordinate the snake can reach
+            do
+            {
+                x = random.Next(maxXY);
+            } while (x % 12 != 0);
+            do
+            {
+                y = random.Next(maxXY);
+            } while (y % 12 != 0);
+
             height = 8;
             width = 8; 
             food = new Rectangle[1];

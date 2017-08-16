@@ -1,3 +1,4 @@
-> Add food
 > points
 > make the snake grow
+> add a game over (loss)
+> add a game over (win(all filled with snek))

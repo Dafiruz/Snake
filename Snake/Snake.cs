@@ -20,8 +20,8 @@ namespace Snake
             brushBody = new SolidBrush(Color.Gray);
             brushHead = new SolidBrush(Color.White);
 
-            x = 100;
-            y = 100;
+            x = 144;
+            y = 144;
             width = 10;
             height = 10;
 
@@ -100,7 +100,7 @@ namespace Snake
 
         public Boolean eat(int foodX, int foodY)
         {
-            if (GetX() >= foodX)
+            if (GetX() == foodX && GetY() == foodY)
             {
                 return true;
             }
