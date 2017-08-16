@@ -42,7 +42,6 @@ namespace Snake
 
         private void Snake_KeyDown(object sender, KeyEventArgs e)
         {
-            this.Text = "Points: " + snake.GetX();
             switch (e.KeyCode)
             {
                 case Keys.W:
@@ -80,10 +79,11 @@ namespace Snake
                 default:
                     break;
             }
-
-            //limit to the right
-            //if (snake.GetX() < max_right)
-
+            if (snake.eat(food.GetX(), food.GetY()))
+            {
+                MessageBox.Show("memes");
+            }
+            
             this.Invalidate();
         }
     }

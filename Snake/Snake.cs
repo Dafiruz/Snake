@@ -97,5 +97,14 @@ namespace Snake
                 old_y = old_y2;
             }
         }
+
+        public Boolean eat(int foodX, int foodY)
+        {
+            if (GetX() >= foodX)
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }

@@ -8,6 +8,9 @@ namespace Snake
 {
     public class Game
     {
+        Snake snake = new Snake();
+        Food food = new Food();
+
         private int points;
 
         public Game()
