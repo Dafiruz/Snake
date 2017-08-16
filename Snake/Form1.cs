@@ -17,6 +17,7 @@ namespace Snake
         Graphics paper;
         Snake snake = new Snake();
 
+        string last_direction = "right";
         int max_right, max_left, max_up, max_down;
 
         public SnakeGame()
@@ -28,8 +29,7 @@ namespace Snake
         {
             max_right = this.Width - 32;
             max_left = 0;
-            max_up = this.Height - 32;
-
+            max_up = 0;
         }
 
         private void Snake_Paint(object sender, PaintEventArgs e)
@@ -45,19 +45,35 @@ namespace Snake
             {
                 case Keys.W:
                 case Keys.Up:
-                    snake.move("up");
+                    if (last_direction != "down")
+                    {
+                        snake.move("up");
+                        last_direction = "up";
+                    }
                     break;
                 case Keys.A:
                 case Keys.Left:
-                    snake.move("left");
+                    if (last_direction != "right")
+                    {
+                        snake.move("left");
+                        last_direction = "left";
+                    }
                     break;
                 case Keys.S:
                 case Keys.Down:
-                    snake.move("down");
+                    if (last_direction != "up")
+                    {
+                        snake.move("down");
+                        last_direction = "down";
+                    }
                     break;
                 case Keys.D:
                 case Keys.Right:
-                    snake.move("right");
+                    if (last_direction != "left")
+                    {
+                        snake.move("right");
+                        last_direction = "right";
+                    }
                     break;
                 default:
                     break;
