@@ -1,5 +1,3 @@
-> convert the array to a list
-> make the snake grow
 > add a game over (loss)
 > add a game over (win(all filled with snek))
-> make the snake auto move in the chosen direction
+> make the snake auto move in the chosen direction (timer)

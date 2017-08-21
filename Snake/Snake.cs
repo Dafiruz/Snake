@@ -12,11 +12,11 @@ namespace Snake
         public Rectangle[] snake;
         private SolidBrush brushHead;
         private SolidBrush brushBody;
-        private int x, y, width, height;
+        private int x, y, width, height, size = 2303, remainingSize = 2300;
 
         public Snake()
         {
-            snake = new Rectangle[3];
+            snake = new Rectangle[size];
             brushBody = new SolidBrush(Color.Gray);
             brushHead = new SolidBrush(Color.White);
 
@@ -25,7 +25,7 @@ namespace Snake
             width = 10;
             height = 10;
 
-            for (int i = 0; i < snake.Length; i++)
+            for (int i = 0; i < snake.Length - remainingSize; i++)
             {
                 snake[i] = new Rectangle(x, y, width, height);
                 x -= 12;
@@ -109,8 +109,11 @@ namespace Snake
 
         public void grow()
         {
-            int size = snake.Length + 1;
-            Array.Resize<Rectangle>(ref snake, size);
+            int x = snake[size - remainingSize].X;
+            int y = snake[size - remainingSize].Y;
+            remainingSize--;
+            snake[size - remainingSize - 1] = new Rectangle(x, y, width, height);
+            
         }
     }
 }

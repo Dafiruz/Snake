@@ -9,7 +9,7 @@ namespace Snake
 {
     class Food
     {
-        private const int maxXY = 590;
+        private const int maxXY = 550;
         private int x, y, height, width;
         public Rectangle[] food;
         private SolidBrush brush;
