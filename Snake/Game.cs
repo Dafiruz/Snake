@@ -30,7 +30,11 @@ namespace Snake
         
         public bool gameOver(int x, int y)
         {
-            return true;
+            if (x == 0 || y == 0 || x == 576 || y == 552)
+            {
+                return true;
+            }
+            return false;
         }
     }
 }
