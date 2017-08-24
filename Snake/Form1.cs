@@ -46,7 +46,7 @@ namespace Snake
             {
                 case Keys.W:
                 case Keys.Up:
-                    if (last_direction != "down" && snake.GetY() >= max_up)
+                    if (last_direction != "down" && snake.GetY(0) >= max_up)
                     {
                         snake.move("up");
                         last_direction = "up";
@@ -54,7 +54,7 @@ namespace Snake
                     break;
                 case Keys.A:
                 case Keys.Left:
-                    if (last_direction != "right" && snake.GetX() >= max_left)
+                    if (last_direction != "right" && snake.GetX(0) >= max_left)
                     {
                         snake.move("left");
                         last_direction = "left";
@@ -62,7 +62,7 @@ namespace Snake
                     break;
                 case Keys.S:
                 case Keys.Down:
-                    if (last_direction != "up" && snake.GetY() <= max_down)
+                    if (last_direction != "up" && snake.GetY(0) <= max_down)
                     {
                         snake.move("down");
                         last_direction = "down";
@@ -70,7 +70,7 @@ namespace Snake
                     break;
                 case Keys.D:
                 case Keys.Right:
-                    if (last_direction != "left" && snake.GetX() <= max_right)
+                    if (last_direction != "left" && snake.GetX(0) <= max_right)
                     {
                         snake.move("right");
                         last_direction = "right";
@@ -86,7 +86,7 @@ namespace Snake
                 snake.grow();
             }
 
-            if (game.gameOver(snake.GetX(), snake.GetY()))
+            if (game.gameOver(snake.GetX(0), snake.GetY(0), snake))
             {
                 MessageBox.Show("Game Over!\n\nYou got "+game.getPoints()+" points!");
                 this.Close();

@@ -49,14 +49,19 @@ namespace Snake
             }
         }
 
-        public int GetY()
+        public int GetY(int i)
         {
-            return snake[0].Y;
+            return snake[i].Y;
         }
 
-        public int GetX()
+        public int GetX(int i)
         {
-            return snake[0].X;
+            return snake[i].X;
+        }
+
+        public int getSize()
+        {
+            return size - remainingSize;
         }
 
         public void move(string direction)
@@ -100,7 +105,7 @@ namespace Snake
 
         public Boolean eat(int foodX, int foodY)
         {
-            if (GetX() == foodX && GetY() == foodY)
+            if (GetX(0) == foodX && GetY(0) == foodY)
             {
                 return true;
             }
@@ -113,7 +118,6 @@ namespace Snake
             int y = snake[size - remainingSize].Y;
             remainingSize--;
             snake[size - remainingSize - 1] = new Rectangle(x, y, width, height);
-            
         }
     }
 }

@@ -8,9 +8,6 @@ namespace Snake
 {
     public class Game
     {
-        Snake snake = new Snake();
-        Food food = new Food();
-
         private int points;
 
         public Game()
@@ -28,11 +25,20 @@ namespace Snake
             points += value;
         }
         
-        public bool gameOver(int x, int y)
+        public bool gameOver(int x, int y, Snake snake)
         {
             if (x == 0 || y == 0 || x == 576 || y == 552)
             {
                 return true;
+            }
+
+            //check every part of the snake to see if the head is in contact with the body
+            for (int i = 1; i < snake.getSize(); i++)
+            {
+                if (x == snake.snake[i].X && y == snake.snake[i].Y)
+                {
+                    return true;
+                }
             }
             return false;
         }
