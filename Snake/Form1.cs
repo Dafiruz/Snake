@@ -86,6 +86,12 @@ namespace Snake
                 snake.grow();
             }
 
+            if (game.gameOver(snake.GetX(), snake.GetY()))
+            {
+                MessageBox.Show("Game Over!\n\nYou got "+game.getPoints()+" points!");
+                this.Close();
+            }
+
             this.Text = "Snake | Points: " + game.getPoints();
             
             this.Invalidate();

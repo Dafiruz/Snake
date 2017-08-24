@@ -27,5 +27,10 @@ namespace Snake
         {
             points += value;
         }
+        
+        public bool gameOver(int x, int y)
+        {
+            return true;
+        }
     }
 }
