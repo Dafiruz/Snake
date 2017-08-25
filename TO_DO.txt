@@ -1,3 +1,3 @@
-> add a game over (loss)
-> add a game over (win(all filled with snek))
+> add a game over (win(all filled with snek)?)
 > make the snake auto move in the chosen direction (timer)
+> add sounds (eating, losing, winning)
