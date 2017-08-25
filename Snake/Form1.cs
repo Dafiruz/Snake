@@ -92,6 +92,11 @@ namespace Snake
                 this.Close();
             }
 
+            if (game.gameWin())
+            {
+                MessageBox.Show("You Won!\n\nFinal Points: " + game.getPoints());
+            }
+
             this.Text = "Snake | Points: " + game.getPoints();
             
             this.Invalidate();

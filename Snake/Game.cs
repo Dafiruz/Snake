@@ -42,5 +42,14 @@ namespace Snake
             }
             return false;
         }
+
+        public bool gameWin()
+        {
+            if (getPoints() >= 500)
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }
